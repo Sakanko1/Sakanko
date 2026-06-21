@@ -1,5 +1,5 @@
 // ==========================================
-// ملف data.js - سكنكو
+// ملف data.js - سكنكو (معدل)
 // ==========================================
 
 const roomsData = [
@@ -272,23 +272,19 @@ function openModal(roomId) {
     document.getElementById("modal-title").innerText = room.title;
     document.getElementById("modal-desc").innerText = room.desc;
     
-    // عرض الصورة الرئيسية
     document.getElementById("modal-img").src = room.images[0];
 
-    // برمجة معرض الصور (Thumbnails)
     const thumbnailsContainer = document.getElementById("modal-thumbnails");
-    thumbnailsContainer.innerHTML = ""; // تفريغ الصور القديمة
+    thumbnailsContainer.innerHTML = ""; 
     if (room.images.length > 1) {
         room.images.forEach((imgSrc, index) => {
             const thumb = document.createElement("img");
             thumb.src = imgSrc;
             thumb.alt = "صورة مصغرة للسكن";
-            if(index === 0) thumb.classList.add("active-thumb"); // تحديد الصورة الأولى كـ نشطة
+            if(index === 0) thumb.classList.add("active-thumb");
             
             thumb.onclick = function() {
-                // تغيير الصورة الرئيسية
                 document.getElementById("modal-img").src = imgSrc;
-                // إزالة الكلاس النشط من باقي الصور وإضافته للي ضغطنا عليها
                 document.querySelectorAll("#modal-thumbnails img").forEach(img => img.classList.remove("active-thumb"));
                 this.classList.add("active-thumb");
             };
@@ -296,7 +292,6 @@ function openModal(roomId) {
         });
     }
 
-    // عرض المميزات داخل النافذة
     const featuresList = document.getElementById("modal-features");
     featuresList.innerHTML = ""; 
     if (room.features && room.features.length > 0) {
@@ -305,11 +300,9 @@ function openModal(roomId) {
         });
     }
 
-    // تجهيز زر الحجز الداخلي وربطه برقم السكن
     const modalSubmitBtn = document.getElementById("modal-submit-btn");
     modalSubmitBtn.setAttribute("onclick", `bookNowAlert('${room.id}')`);
     
-    // تعطيل الزر إذا كان السكن غير متاح
     if (room.bedsAvailable === 0) {
         modalSubmitBtn.classList.add("btn-disabled");
         modalSubmitBtn.innerText = "عذراً، السكن مكتمل";
@@ -319,7 +312,6 @@ function openModal(roomId) {
         modalSubmitBtn.innerText = "احجز السكن الآن";
     }
 
-    // إضافة قسم الأسعار
     const oldPrice = document.getElementById("modal-price-container");
     if (oldPrice) oldPrice.remove();
 
@@ -338,22 +330,57 @@ function openModal(roomId) {
     modal.classList.add("active");
 }
 
-function closeModal() {
-    document.getElementById("details-modal").classList.remove("active");
-    const container = document.getElementById("modal-price-container");
-    if (container) container.remove();
-}
-
 function bookNowAlert(roomId) {
     const room = roomsData.find(r => r.id === roomId);
-    let msg = `اهلا سكنكو 👋\nبستفسر عن سكن كود: ${room.id}\n${room.title}\n`;
+    if (!room) return;
+
+    let msg = `🏠 أهلاً سكنكو.. أرغب في الاستفسار عن السكن:\n\n`;
+    msg += `📌 كود السكن: ${room.id}\n`;
+    msg += `🏠 العنوان: ${room.title}\n`;
+    msg += `📍 المنطقة: ${room.city}\n`;
+    msg += `👥 النوع: ${room.type}\n`;
+    
     if (room.priceDetails) {
-        msg += `الأسعار:\n` + Object.entries(room.priceDetails).map(([k, v]) => `- ${k}: ${v}`).join('\n');
+        msg += `\n💵 الأسعار:\n`;
+        Object.entries(room.priceDetails).forEach(([k, v]) => {
+            msg += `- ${k}: ${v}\n`;
+        });
+    } else {
+        msg += `💰 السعر: ${room.price}\n`;
     }
+
+    if (room.features && room.features.length > 0) {
+        msg += `\n✨ المميزات:\n- ${room.features.join('\n- ')}\n`;
+    }
+
+    msg += `\n💬 هل السكن متاح حالياً للمعاينة؟`;
+
     window.open(`https://wa.me/201025910607?text=${encodeURIComponent(msg)}`, '_blank');
 }
 
-// الدوال الأخرى (الفلتر، الثيم)
+// ==========================================
+// الدوال الجديدة المضافة
+// ==========================================
+
+function toggleTheme() {
+    const body = document.body;
+    body.classList.toggle("light-mode");
+    
+    if (body.classList.contains("light-mode")) {
+        localStorage.setItem("sakanko-theme", "light");
+    } else {
+        localStorage.removeItem("sakanko-theme");
+    }
+}
+
+function resetFilters() {
+    document.getElementById("city-filter").value = "all";
+    document.getElementById("type-filter").value = "all";
+    filteredRooms = [...roomsData];
+    currentLimit = cardsPerPage;
+    renderCards();
+}
+
 function filterRooms() {
     const city = document.getElementById("city-filter").value;
     const type = document.getElementById("type-filter").value;
