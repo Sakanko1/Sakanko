@@ -1,4 +1,7 @@
-// 1. قاعدة البيانات التجريبية للسكنات (تمت إضافة 5 سكنات جديدة ليصبح المجموع 11 سكن)
+// ==========================================
+// ملف data.js - سكنكو
+// ==========================================
+
 const roomsData = [
     {
         id: "SK-101",
@@ -6,16 +9,12 @@ const roomsData = [
         city: "شمال الجامعة",
         type: "شباب",
         price: "1200 جنيه / شهرياً",
-        roomsCount: 3,       
-        totalBeds: 6,        
-        bedsAvailable: 2,    
-        images: [
-            "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=500&q=80",
-            "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=500&q=80",
-            "https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=500&q=80"
-        ],
-        desc: "شقة مميزة جداً تشطيب لوكس، قريبة من الخدمات والمواصلات والجامعة. الشقة مجهزة بالكامل للأولاد ومريحة جداً للمذاكرة.",
-        features: ["واي فاي مجاني", "تكييف", "غسالة", "ثلاجة", "سخان غاز", "قريب من المواصلات"]
+        roomsCount: 3,
+        totalBeds: 6,
+        bedsAvailable: 2,
+        images: ["https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=500&q=80"],
+        desc: "شقة مميزة جداً تشطيب لوكس، قريبة من الخدمات والمواصلات والجامعة.",
+        features: ["واي فاي", "تكييف", "غسالة", "ثلاجة"]
     },
     {
         id: "SK-102",
@@ -174,7 +173,7 @@ const roomsData = [
         desc: "سكن شبابي VIP بنظام دوبلكس، صالة استقبال ضخمة وشاشات عرض، مناسب جداً للطلاب الذين يبحثون عن الرفاهية والراحة أثناء الدراسة.",
         features: ["صالة ألعاب صغيرة", "تكييفات مركزية", "إنترنت فائق السرعة", "تراس كبير", "فلتر مياه"]
     },
-      {
+    {
         id: "SK-112",
         title: "غرفة سينجل فاخرة لعشاق الهدوء والخصوصية",
         city: "رجال الاعمال",
@@ -190,14 +189,34 @@ const roomsData = [
         desc: "غرفة فردية (سنجل) مكيفة بالكامل في حي رجال الأعمال الراقر. السكن هادئ جداً ومناسب لطلاب الطب والهندسة.",
         features: ["تكييف", "حمام خاص", "شاشة تلفزيون", "واي فاي", "تنظيف أسبوعي"]
     },
+    {
+        id: "SK-113",
+        title: "فيلا سكن طالبات - شمال الجامعة (مستوى فندقي)",
+        city: "شمال الجامعة",
+        type: "بنات",
+        price: "1300 جنيه / شهرياً",
+        priceDetails: { "غرفة دابل": "1400 جنيه", "غرفة تريبل": "1300 جنيه" },
+        roomsCount: 3,
+        totalBeds: 7,
+        bedsAvailable: 7,
+        images: [
+            "https://i.ibb.co/jPNLgmgK/IMG-20260606-WA0007.jpg",
+            "https://i.ibb.co/dZbjqg1/IMG-20260606-WA0006.jpg",
+            "https://i.ibb.co/6Jr2w0dj/IMG-20260606-WA0004.jpg",
+            "https://i.ibb.co/ycYvnw2X/IMG-20260606-WA0008.jpg",
+            "https://i.ibb.co/CKpw9bwB/IMG-20260606-WA0002.jpg",
+            "https://i.ibb.co/57hHMh1/IMG-20260606-WA0003.jpg",
+            "https://i.ibb.co/gMq8DCSr/IMG-20260606-WA0005.jpg"
+        ],
+        desc: "فيلا سكن طالبات مميزة مكونة من 4 أدوار، تحتوي على 3 غرف (2 دابل + 1 تريبل) بشمال الجامعة. موقع استراتيجي قريب جداً من سفنكس والجامعة الأهلية، مع توفير كافة سبل الراحة والأمان.",
+        features: ["سيارة خاصة", "كاميرات مراقبة", "إشراف أمني", "ديب فريزر", "واي فاي"]
+    }
 ];
 
-// 2. المتغيرات الأساسية للتحكم في العرض
 let filteredRooms = [...roomsData];
-let currentLimit = 4; 
-const cardsPerPage = 4; 
+let currentLimit = 4;
+const cardsPerPage = 4;
 
-// 3. دالة بناء الكروت وعرضها في الصفحة (تم تحديث البيانات المعروضة)
 function renderCards() {
     const grid = document.getElementById("listings-grid");
     const loadMoreContainer = document.getElementById("load-more-container");
@@ -206,217 +225,149 @@ function renderCards() {
     const visibleRooms = filteredRooms.slice(0, currentLimit);
 
     if (visibleRooms.length === 0) {
-        grid.innerHTML = `<div style="grid-column: 1/-1; text-align: center; padding: 40px; color: var(--text-body); font-size: 18px;">مفيش سكنات بتطابق الفلاتر دي حالياً.. جرب تختار حاجة تانية!</div>`;
+        grid.innerHTML = `<div style="grid-column: 1/-1; text-align: center; padding: 40px;">لا توجد سكنات تطابق الفلتر..</div>`;
         loadMoreContainer.style.display = "none";
         return;
     }
 
     visibleRooms.forEach(room => {
         const isFull = room.bedsAvailable === 0;
-        
-        // تجهيز بادج الحالة والسرير المتاح
-        const statusBadge = isFull ? `<div class="badge-status-full">مكتمل الحجز</div>` : '';
-        const bedText = isFull 
-            ? `<span class="bed-status text-full"><i class="fa-solid fa-circle-xmark"></i> مكتمل الحجز</span>` 
-            : `<span class="bed-status text-available"><i class="fa-solid fa-bed"></i> متاح ${room.bedsAvailable} سراير حالياً</span>`;
-        
-        const cardHTML = `
+        grid.insertAdjacentHTML("beforeend", `
             <div class="card">
                 <div class="card-img-wrapper">
                     <span class="badge-id">${room.id}</span>
                     <span class="badge-type">${room.type}</span>
-                    ${statusBadge}
+                    ${isFull ? '<div class="badge-status-full">مكتمل</div>' : ''}
                     <img src="${room.images[0]}" alt="${room.title}">
                 </div>
                 <div class="card-content">
-                    <h3 class="card-title" title="${room.title}">${room.title}</h3>
-                    <ul class="card-info">
-                        <li><i class="fa-solid fa-location-dot"></i> <span>${room.city}</span></li>
-                        <li><i class="fa-solid fa-door-open"></i> <span>تقسيم السكن: ${room.roomsCount} غرف / ${room.totalBeds} سراير</span></li>
-                        <li>${bedText}</li>
+                    <h3 class="card-title">${room.title}</h3>
+                    <ul class="card-info" style="list-style:none; padding:0; margin:10px 0;">
+                        <li><i class="fa-solid fa-location-dot"></i> ${room.city}</li>
+                        <li><i class="fa-solid fa-door-open"></i> ${room.roomsCount} غرف / ${room.totalBeds} سرير</li>
+                        <li><i class="fa-solid fa-bed"></i> متاح: ${room.bedsAvailable} سرير</li>
                     </ul>
-                    <div class="price-tag">${room.price}</div>
-                    <div class="card-actions">
+                    <div class="price-tag" style="font-weight:bold; color:var(--primary-color);">${room.price}</div>
+                    <div class="card-actions" style="margin-top:10px;">
                         <button class="btn btn-details" onclick="openModal('${room.id}')">التفاصيل</button>
-                        <button class="btn btn-book ${isFull ? 'btn-disabled' : ''}" onclick="bookNowAlert('${room.id}', ${isFull})">احجز الآن</button>
+                        <button class="btn btn-book ${isFull ? 'btn-disabled' : ''}" onclick="bookNowAlert('${room.id}')">احجز الآن</button>
                     </div>
                 </div>
             </div>
-        `;
-        grid.insertAdjacentHTML("beforeend", cardHTML);
+        `);
     });
-
-    if (currentLimit >= filteredRooms.length) {
-        loadMoreContainer.style.display = "none";
-    } else {
-        loadMoreContainer.style.display = "block";
-    }
+    loadMoreContainer.style.display = (currentLimit >= filteredRooms.length) ? "none" : "block";
 }
 
-// 4. دالة تشغيل الفلاتر
-function filterRooms() {
-    const cityValue = document.getElementById("city-filter").value;
-    const typeValue = document.getElementById("type-filter").value;
-
-    filteredRooms = roomsData.filter(room => {
-        const matchesCity = (cityValue === "all" || room.city === cityValue);
-        const matchesType = (typeValue === "all" || room.type === typeValue);
-        return matchesCity && matchesType;
-    });
-
-    currentLimit = cardsPerPage;
-    renderCards();
-}
-
-// 5. دالة زر "عرض المزيد"
 function loadMoreCards() {
     currentLimit += cardsPerPage;
     renderCards();
 }
 
-// 6. دالة إعادة تعيين الفلاتر
-function resetFilters() {
-    const resetIcon = document.getElementById("reset-icon");
-    resetIcon.classList.add("spin-animation");
-    setTimeout(() => resetIcon.classList.remove("spin-animation"), 500);
-
-    document.getElementById("city-filter").value = "all";
-    document.getElementById("type-filter").value = "all";
-
-    filteredRooms = [...roomsData];
-    currentLimit = cardsPerPage;
-    renderCards();
-}
-
-// 7. فتح النافذة المنبثقة (Modal) وعرض تفاصيل السكن بالكامل
 function openModal(roomId) {
     const room = roomsData.find(r => r.id === roomId);
     if (!room) return;
 
     const modal = document.getElementById("details-modal");
-    
     document.getElementById("modal-title").innerText = room.title;
     document.getElementById("modal-desc").innerText = room.desc;
     
-    const mainImg = document.getElementById("modal-img");
-    mainImg.src = room.images[0];
+    // عرض الصورة الرئيسية
+    document.getElementById("modal-img").src = room.images[0];
 
-    const thumbContainer = document.getElementById("modal-thumbnails");
-    thumbContainer.innerHTML = "";
-    
-    room.images.forEach((imgUrl, index) => {
-        const activeClass = index === 0 ? "active-thumb" : "";
-        const thumbHTML = `<img src="${imgUrl}" class="${activeClass}" onclick="changeModalImage(this, '${imgUrl}')" alt="صورة فرعية">`;
-        thumbContainer.insertAdjacentHTML("beforeend", thumbHTML);
-    });
-
-    const featuresList = document.getElementById("modal-features");
-    featuresList.innerHTML = "";
-    room.features.forEach(feat => {
-        featuresList.insertAdjacentHTML("beforeend", `<div><i class="fa-solid fa-circle-check"></i> <span>${feat}</span></div>`);
-    });
-
-    const modalSubmitBtn = document.getElementById("modal-submit-btn");
-    if (room.bedsAvailable === 0) {
-        modalSubmitBtn.innerText = "مكتمل الحجز تماماً";
-        modalSubmitBtn.className = "btn btn-disabled";
-        modalSubmitBtn.onclick = null;
-    } else {
-        modalSubmitBtn.innerText = "احجز السكن الآن";
-        modalSubmitBtn.className = "btn btn-book";
-        modalSubmitBtn.onclick = function() { bookNowAlert(room.id, false); };
+    // برمجة معرض الصور (Thumbnails)
+    const thumbnailsContainer = document.getElementById("modal-thumbnails");
+    thumbnailsContainer.innerHTML = ""; // تفريغ الصور القديمة
+    if (room.images.length > 1) {
+        room.images.forEach((imgSrc, index) => {
+            const thumb = document.createElement("img");
+            thumb.src = imgSrc;
+            thumb.alt = "صورة مصغرة للسكن";
+            if(index === 0) thumb.classList.add("active-thumb"); // تحديد الصورة الأولى كـ نشطة
+            
+            thumb.onclick = function() {
+                // تغيير الصورة الرئيسية
+                document.getElementById("modal-img").src = imgSrc;
+                // إزالة الكلاس النشط من باقي الصور وإضافته للي ضغطنا عليها
+                document.querySelectorAll("#modal-thumbnails img").forEach(img => img.classList.remove("active-thumb"));
+                this.classList.add("active-thumb");
+            };
+            thumbnailsContainer.appendChild(thumb);
+        });
     }
 
+    // عرض المميزات داخل النافذة
+    const featuresList = document.getElementById("modal-features");
+    featuresList.innerHTML = ""; 
+    if (room.features && room.features.length > 0) {
+        room.features.forEach(feature => {
+            featuresList.innerHTML += `<div><i class="fa-solid fa-check-circle" style="color: var(--primary-color);"></i> ${feature}</div>`;
+        });
+    }
+
+    // تجهيز زر الحجز الداخلي وربطه برقم السكن
+    const modalSubmitBtn = document.getElementById("modal-submit-btn");
+    modalSubmitBtn.setAttribute("onclick", `bookNowAlert('${room.id}')`);
+    
+    // تعطيل الزر إذا كان السكن غير متاح
+    if (room.bedsAvailable === 0) {
+        modalSubmitBtn.classList.add("btn-disabled");
+        modalSubmitBtn.innerText = "عذراً، السكن مكتمل";
+        modalSubmitBtn.removeAttribute("onclick");
+    } else {
+        modalSubmitBtn.classList.remove("btn-disabled");
+        modalSubmitBtn.innerText = "احجز السكن الآن";
+    }
+
+    // إضافة قسم الأسعار
+    const oldPrice = document.getElementById("modal-price-container");
+    if (oldPrice) oldPrice.remove();
+
+    let priceHTML = `<div id="modal-price-container" style="margin: 15px 0; padding: 15px; background: rgba(108, 43, 161, 0.1); border-radius: 8px;">
+        <h4 style="color: var(--primary-color); margin-bottom: 10px;">💰 تفاصيل الأسعار:</h4>`;
+    if (room.priceDetails) {
+        Object.entries(room.priceDetails).forEach(([k, v]) => {
+            priceHTML += `<div style="display:flex; justify-content:space-between; border-bottom:1px dashed #ccc; padding:5px 0;"><span>${k}</span> <strong>${v}</strong></div>`;
+        });
+    } else {
+        priceHTML += `<div style="display:flex; justify-content:space-between; padding:5px 0;"><span>السعر:</span> <strong>${room.price}</strong></div>`;
+    }
+    priceHTML += `</div>`;
+
+    document.getElementById("modal-desc").insertAdjacentHTML('afterend', priceHTML);
     modal.classList.add("active");
 }
 
-// 8. تغيير الصورة الرئيسية عند الضغط على الـ Thumbnail
-function changeModalImage(thumbElement, imgUrl) {
-    document.getElementById("modal-img").src = imgUrl;
-    const thumbs = document.querySelectorAll(".thumbnail-container img");
-    thumbs.forEach(t => t.classList.remove("active-thumb"));
-    thumbElement.classList.add("active-thumb");
-}
-
-// 9. إغلاق النافذة المنبثقة
 function closeModal() {
     document.getElementById("details-modal").classList.remove("active");
+    const container = document.getElementById("modal-price-container");
+    if (container) container.remove();
 }
 
-window.onclick = function(event) {
-    const modal = document.getElementById("details-modal");
-    if (event.target === modal) {
-        closeModal();
-    }
-}
-
-// 10. دالة الأكشن عند الضغط على "احجز الآن" (إرسال تفاصيل السكن كاملة بما فيها التقسيم عبر الواتساب)
-function bookNowAlert(roomId, isDisabled) {
-    if (isDisabled) return;
-    
+function bookNowAlert(roomId) {
     const room = roomsData.find(r => r.id === roomId);
-    if (!room) return;
-
-    const phoneNumber = "201025910607"; 
-    
-    const message = `اهلا سكنكو 👋
-بستفسر بخصوص السكن دا :
-
-🆔 كود السكن: ${room.id}
-🏠 نوع السكن: سكن ${room.type}
-📍 الموقع: ${room.city}
-🚪 تقسيم السكن: ${room.roomsCount} غرف / ${room.totalBeds} سراير
-🛏️ السراير المتاحة: ${room.bedsAvailable} سرير متاح
-💰 السعر: ${room.price}
-📝 تفاصيل إضافية: ${room.title}`;
-    
-    const encodedMessage = encodeURIComponent(message);
-    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-    window.open(whatsappURL, '_blank');
-}
-
-// ====================================================
-// نظام التحكم في ثيم الليل والنهار (Dark / Light Mode)
-// ====================================================
-function toggleTheme() {
-    const body = document.body;
-    const themeIcon = document.getElementById("theme-icon");
-    const themeText = document.getElementById("theme-text");
-
-    if (body.classList.contains("light-mode")) {
-        // التحويل للوضع الليلي (الافتراضي)
-        body.classList.remove("light-mode");
-        themeIcon.className = "fa-solid fa-sun";
-        themeText.innerText = "الوضع النهاري";
-        localStorage.setItem("sakanko-theme", "dark");
-    } else {
-        // التحويل للوضع النهاري
-        body.classList.add("light-mode");
-        themeIcon.className = "fa-solid fa-moon";
-        themeText.innerText = "الوضع الليلي";
-        localStorage.setItem("sakanko-theme", "light");
+    let msg = `اهلا سكنكو 👋\nبستفسر عن سكن كود: ${room.id}\n${room.title}\n`;
+    if (room.priceDetails) {
+        msg += `الأسعار:\n` + Object.entries(room.priceDetails).map(([k, v]) => `- ${k}: ${v}`).join('\n');
     }
+    window.open(`https://wa.me/201025910607?text=${encodeURIComponent(msg)}`, '_blank');
 }
 
-// دالة تطبيق الثيم المحفوظ عند تحميل الصفحة
+// الدوال الأخرى (الفلتر، الثيم)
+function filterRooms() {
+    const city = document.getElementById("city-filter").value;
+    const type = document.getElementById("type-filter").value;
+    filteredRooms = roomsData.filter(r => (city === "all" || r.city === city) && (type === "all" || r.type === type));
+    currentLimit = cardsPerPage;
+    renderCards();
+}
+
 function applySavedTheme() {
-    const savedTheme = localStorage.getItem("sakanko-theme");
-    const body = document.body;
-    const themeIcon = document.getElementById("theme-icon");
-    const themeText = document.getElementById("theme-text");
-
-    // التحقق لو كان المستخدم اختار وضع النهار سابقاً
-    if (savedTheme === "light") {
-        body.classList.add("light-mode");
-        if (themeIcon && themeText) {
-            themeIcon.className = "fa-solid fa-moon";
-            themeText.innerText = "الوضع الليلي";
-        }
-    }
+    const saved = localStorage.getItem("sakanko-theme");
+    if (saved === "light") document.body.classList.add("light-mode");
 }
 
-// 11. تشغيل الدالة لأول مرة عند تحميل الصفحة
 document.addEventListener("DOMContentLoaded", () => {
-    applySavedTheme(); // تطبيق الثيم أولاً لمنع وميض الألوان
+    applySavedTheme();
     renderCards();
 });
