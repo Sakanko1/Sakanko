@@ -2,6 +2,9 @@
 // ملف data.js - سكنكو (معدل)
 // ==========================================
 
+function closeModal() {
+    document.getElementById("details-modal").classList.remove("active");
+}
 const roomsData = [
     {
         id: "SK-101",
