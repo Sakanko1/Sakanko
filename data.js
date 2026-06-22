@@ -91,7 +91,7 @@ const roomsData = [
     bedsAvailable: 6,
     images: [
         "https://i.ibb.co/NdDM3RZj/image.jpg",
-        "hdttps://i.ibb.co/VWJFg3tj/image.jpg",
+        "https://i.ibb.co/VWJFg3tj/image.jpg",
         "https://i.ibb.co/VpgKwYTr/image.jpg",
         "https://i.ibb.co/2TDfzMz/image.jpg",
         "https://i.ibb.co/dwGLjjm4/image.jpg",
