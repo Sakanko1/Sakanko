@@ -6,19 +6,32 @@ function closeModal() {
     document.getElementById("details-modal").classList.remove("active");
 }
 const roomsData = [
-    {
-        id: "SK-101",
-        title: "شقة مفروشة مكيفة قريبة من البوابة الرئيسية",
-        city: "شمال الجامعة",
-        type: "شباب",
-        price: "1200 جنيه / شهرياً",
-        roomsCount: 3,
-        totalBeds: 6,
-        bedsAvailable: 2,
-        images: ["https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=500&q=80"],
-        desc: "شقة مميزة جداً تشطيب لوكس، قريبة من الخدمات والمواصلات والجامعة.",
-        features: ["واي فاي", "تكييف", "غسالة", "ثلاجة"]
-    },
+{
+    id: "SK-101",
+    title: "شقة مميزة بالمرحلة الرابعة - بجوار الجامعة الأهلية",
+    city: "المرحلة الرابعة",
+    type: "شباب",
+    price: "1350 جنيه / شهرياً",
+    roomsCount: 2, 
+    totalBeds: 5,
+    bedsAvailable: 5,
+    images: [
+        "https://i.ibb.co/49hpXTs/image.jpg",
+        "https://i.ibb.co/m5FNPqgX/image.jpg",
+        "https://i.ibb.co/1YRwWNRP/image.jpg",
+        "https://i.ibb.co/9mh1dCVq/image.jpg",
+        "https://i.ibb.co/LdSTZ6d0/image.jpg",
+        "https://i.ibb.co/nq9QXMBv/image.jpg",
+        "https://i.ibb.co/Xxv3GrQ1/image.jpg",
+        "https://i.ibb.co/Mkrcf8zT/image.jpg",
+        "https://i.ibb.co/tMdBf9KP/image.jpg",
+        "https://i.ibb.co/rKdPv1v3/image.jpg",
+        "https://i.ibb.co/MxMcvFqV/image.jpg",
+        "https://i.ibb.co/W49Zs5Kc/image.jpg"
+    ],
+    desc: "شقة في موقع استراتيجي بالمرحلة الرابعة على الشارع الرئيسي، بجوار الجامعة الأهلية وقسم الشرطة ومديرية الأمن مباشرة. خدمات متكاملة خلف البيت، ومواصلات متوفرة أمام البيت مباشرة. السعر للعام الجديد.",
+    features: ["موقع مميز", "قرب المواصلات", "بجوار الجامعة", "خدمات متوفرة"]
+},
     {
         id: "SK-102",
         title: "سكن بنات هادئ ونظيف جداً - غرف مزدوجة",

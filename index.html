@@ -938,6 +938,26 @@
                 height: 120px; 
             }
         }
+        .card-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+/* تنسيق الصورة الكبيرة جوة المودال لمنع البكسلة والتمطيط */
+.modal-body img, .modal-content img {
+    width: 100%;
+    max-height: 450px; /* بيمنع الصورة إنها تكبر زيادة عن اللزوم فتبكسل */
+    object-fit: contain; /* بيحافظ على أبعاد الصورة الأصلية ونقائها جوة الإطار */
+    background-color: #f8f9fa; /* خلفية خفيفة مريحة للعين لو الصورة ليها أبعاد مختلفة */
+}
+
+/* تنسيق الصور المصغرة (Thumbnails) اللي تحت عشان تظهر دايماً حادة ونقية */
+.thumbnail-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
     </style>
 </head>
 <body>
@@ -1096,5 +1116,6 @@
   window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
 </script>
 <script defer src="/_vercel/insights/script.js"></script>
+<script src="sheets.js"></script>
 </body>
 </html>
