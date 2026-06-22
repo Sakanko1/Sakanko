@@ -1,4 +1,23 @@
-// 1. إعدادات الاتصال بجوجل شيت
+// 1. ضع سكناتك القديمة هنا داخل هذه المصفوفة بنفس طريقتك
+const oldSakans = [
+    {
+        id: sk-100,
+        title: "سكن الأوائل",
+        city: "أسيوط الجديدة",
+        type: "بنات",
+        price: "700",
+        distance: "بجوار الجامعة",
+        capacity: "3 غرف و 6 أسرة",
+        availableBeds: 2,
+        images: [
+            "https://via.placeholder.com/300x200?text=صورة+السكن", // ضع لينك الصورة الأولى هنا
+            "" // لينك الصورة الثانية
+        ]
+    },
+    // ضيف باقي سكناتك القديمة هنا بنفس الشكل...
+];
+
+// 2. إعدادات الاتصال بجوجل شيت
 const SHEET_ID = '1-prwS5d357F0Yw7iZ_CzFAR0sZs4U_99LvAXO2JDftM';
 const SHEET_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json`;
 
@@ -58,4 +77,9 @@ async function fetchNewSakanData() {
     }
 }
 
+<<<<<<< HEAD
 document.addEventListener("DOMContentLoaded", fetchNewSakanData);
+=======
+// تشغيل دالة سحب البيانات الجديدة
+fetchNewSakanData();
+>>>>>>> 3f96ff635792766c2473a28dde439f155bf945c4
