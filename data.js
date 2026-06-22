@@ -211,7 +211,8 @@ const roomsData = [
             "https://i.ibb.co/gMq8DCSr/IMG-20260606-WA0005.jpg"
         ],
         desc: "فيلا سكن طالبات مميزة مكونة من 4 أدوار، تحتوي على 3 غرف (2 دابل + 1 تريبل) بشمال الجامعة. موقع استراتيجي قريب جداً من سفنكس والجامعة الأهلية، مع توفير كافة سبل الراحة والأمان.",
-        features: ["سيارة خاصة", "كاميرات مراقبة", "إشراف أمني", "ديب فريزر", "واي فاي"]
+        features: ["سيارة خاصة", "كاميرات مراقبة", "إشراف أمني", "ديب فريزر", "واي فاي"],
+        video: "dQw4w9WgXcQ"
     }
 ];
 
@@ -271,6 +272,34 @@ function openModal(roomId) {
     if (!room) return;
 
     const modal = document.getElementById("details-modal");
+    // --- إضافة زرار الفيديو ديناميكياً تحت الوصف ---
+    const oldVideoBtn = document.getElementById("modal-video-btn");
+    if (oldVideoBtn) oldVideoBtn.remove();
+
+    if (room.video && room.video.trim() !== "") {
+        const videoBtn = document.createElement("a");
+        videoBtn.id = "modal-video-btn";
+        videoBtn.href = `https://www.youtube.com/watch?v=${room.video}`;
+        videoBtn.target = "_blank";
+        videoBtn.innerHTML = `<i class="fa-brands fa-youtube" style="margin-left: 8px; color: #ff0000;"></i>مشاهدة فيديو السكن`;
+        
+        videoBtn.style.display = "inline-flex";
+        videoBtn.style.alignItems = "center";
+        videoBtn.style.justifyContent = "center";
+        videoBtn.style.marginTop = "15px";
+        videoBtn.style.padding = "10px 20px";
+        videoBtn.style.backgroundColor = "#fff";
+        videoBtn.style.border = "2px solid #8a2be2";
+        videoBtn.style.color = "#8a2be2";
+        videoBtn.style.borderRadius = "8px";
+        videoBtn.style.textDecoration = "none";
+        videoBtn.style.fontWeight = "bold";
+        videoBtn.style.cursor = "pointer";
+        videoBtn.style.boxShadow = "0 2px 5px rgba(0,0,0,0.1)";
+        
+        document.getElementById("modal-desc").after(videoBtn);
+    }
+    // --------------------------------------------
     document.getElementById("modal-title").innerText = room.title;
     document.getElementById("modal-desc").innerText = room.desc;
     
