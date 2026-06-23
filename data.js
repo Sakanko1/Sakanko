@@ -157,58 +157,96 @@ const roomsData = [
     desc: "سكن شباب بموقع متميز في 17 ط، أمام كافتريا قصر الشوق مباشرة. السكن مجهز بتكييفين (حالة زيرو) لضمان أعلى درجات الراحة. مثالي للطلاب الباحثين عن الهدوء والخدمات المتكاملة.",
     features: ["تكييفين بحالة الزيرو", "موقع حيوي", "قرب الخدمات", "مساحة مريحة"]
 },
-   {
-    id: "SK-108",
-    title: "سكن شباب - شمال الجامعة (عند سوبر ماركت أبو دياب)",
+{
+    id: "SK-107",
+    title: "فيلا سكن طالبات - شمال الجامعة (تجهيزات حديثة)",
     city: "شمال الجامعة",
-    type: "شباب",
-    price: "1200 - 1300 جنيه / شهرياً",
-    roomsCount: 3, 
+    type: "بنات",
+    price: "1300 جنيه / شهرياً",
+    priceDetails: { "غرفة دابل": "1400 جنيه", "غرفة تريبل": "1300 جنيه" },
+    roomsCount: 4,
+    totalBeds: 9, // يرجى تحديد العدد الإجمالي إذا كان متاحاً
+    bedsAvailable: 9, // يرجى تحديد عدد الأسرة المتاحة
+    images: [
+        "https://i.ibb.co/SXDZwHJp/IMG-20260606-WA0040.jpg", 
+"https://i.ibb.co/fd5dpxcj/IMG-20260606-WA0037.jpg", 
+"https://i.ibb.co/HfzstQDT/IMG-20260606-WA0039.jpg", 
+"https://i.ibb.co/jPzvFTYX/IMG-20260606-WA0035.jpg", 
+"https://i.ibb.co/gFzXFz9x/IMG-20260606-WA0038.jpg", 
+"https://i.ibb.co/tp1cmJFf/IMG-20260606-WA0036.jpg", 
+"https://i.ibb.co/N6JRh97J/IMG-20260606-WA0041-1.jpg", 
+    ],
+    desc: "فيلا سكن طالبات مكونة من 4 أدوار بشمال الجامعة، موقع استراتيجي قريب من سفنكس والجامعة الأهلية. السكن مجهز بأجهزة جديدة بالكامل بما في ذلك ديب فريزر، مع توفير خدمة سيارة خاصة للسكن.",
+    features: ["سيارة خاصة", "كاميرات مراقبة", "إشراف أمني", "مشرفة مقيمة", "ديب فريزر", "واي فاي", "أجهزة حديثة"],
+    video: ""
+},
+  {
+    id: "SK-108",
+    title: "شقة المرحلة الأولى - موقع مميز",
+    city: "المرحلة الأولى",
+    type: "بنات",
+    price: "1800 جنيه / شهرياً",
+    priceDetails: { "السعر": "1800 جنيه" },
+    roomsCount: 3,
     totalBeds: 7,
     bedsAvailable: 7,
     images: [
-        "https://i.ibb.co/BH7rptyv/image.jpg",
-        "https://i.ibb.co/bMhdt187/image.jpg",
-        "https://i.ibb.co/VWVgMXYP/image.jpg",
-        "https://i.ibb.co/DDPrH9Vj/image.jpg",
-        "https://i.ibb.co/kg6yrkB2/image.jpg",
-        "https://i.ibb.co/39K2mxjG/image.jpg",
-        "https://i.ibb.co/7xdmMzjN/image.jpg",
-        "https://i.ibb.co/DHjSXRc5/image.jpg",
-        "https://i.ibb.co/cXk0YNM5/image.jpg",
-        "https://i.ibb.co/tTxNSPdk/image.jpg",
-        "https://i.ibb.co/pjrRGBzt/image.jpg",
-        "https://i.ibb.co/Fk1J3MdG/image.jpg",
-        "https://i.ibb.co/tpMPs3sq/image.jpg",
-        "https://i.ibb.co/zhTtMv7J/image.jpg"
+        "https://i.ibb.co/ymxM7PVL/IMG.jpg",
+        "https://i.ibb.co/Y7nQ57S0/IMG-20260623-WA0119.jpg",
+        "https://i.ibb.co/ycBk5jqW/IMG-20260623-WA0120.jpg",
+        "https://i.ibb.co/fdqJy4s4/IMG-20260623-WA0121.jpg",
+        "https://i.ibb.co/MDc8gtmq/IMG-20260623-WA0118.jpg"
     ],
-    desc: "سكن مميز في شمال الجامعة بجوار سوبر ماركت أبو دياب ويوجد كافيه بالأسفل. السكن يتكون من دورين (أرضي وأول علوي) ويحتوي على غرفتين دابل (سعر السرير 1300) وغرفة ترابل (سعر السرير 1200).",
-    features: ["موقع حيوي", "كافيه ملحق بالبيت", "قرب الخدمات", "خيارات غرف متعددة"]
+    desc: "شقة بموقع استراتيجي ومميز جداً، تتكون من وحدتين سكنيتين (دور أرضي ودور ثالث). الشقة مجهزة بالكامل ومكيفة، وتوفر بيئة مريحة للطالبات.",
+    features: ["مكيف هواء", "فلتر مياه", "موقع حيوي", "قريب من الخدمات"],
+    video: ""
+},
+{
+    id: "SK-109",
+    title: "سكن دار الريس للطالبات - شمال الجامعة",
+    city: "شمال الجامعة",
+    type: "بنات",
+    price: "1000 جنيه / شهرياً (للسمر)",
+    priceDetails: { 
+        "سمر": "1000 جنيه", 
+        "غرفة دابل (للسنة الجديدة)": "1600 جنيه", 
+        "غرفة تريبل (للسنة الجديدة)": "1500 جنيه" 
+    },
+    roomsCount: 5, // بناءً على المعطيات (شقتين + غرف السنة)
+    totalBeds: 18, // (9 أسرة * 2 شقة سمر)
+    bedsAvailable: 18, 
+    images: [
+        "https://i.ibb.co/9HDB3J3F/IMG-20260607-WA0030.jpg",
+       "https://i.ibb.co/tpjbdDrB/IMG-20260607-WA0020.jpg",
+"https://i.ibb.co/mrbMj2Vz/IMG-20260607-WA0026.jpg",
+"https://i.ibb.co/BKd4F8mG/IMG-20260607-WA0031.jpg",
+"https://i.ibb.co/gMbzpZ0d/IMG-20260622-WA0041.jpg",
+
+"https://i.ibb.co/sp4ByD9Z/IMG-20260607-WA0036.jpg",
+"https://i.ibb.co/4wv7CPHM/IMG-20260607-WA0021.jpg",
+"https://i.ibb.co/gMSDJ2H5/IMG-20260607-WA0032.jpg",
+"https://i.ibb.co/JWKpsnKg/IMG-20260607-WA0035.jpg",
+"https://i.ibb.co/bRX9176P/IMG-20260607-WA0029.jpg",
+"https://i.ibb.co/YFCkVz4V/IMG-20260607-WA0033.jpg",
+"https://i.ibb.co/F49dN1qx/IMG-20260622-WA0040.jpg",
+"https://i.ibb.co/5gb6b4QN/IMG-20260622-WA0039.jpg",
+"https://i.ibb.co/ynW8kvX4/IMG-20260607-WA0056.jpg",
+"https://i.ibb.co/tTw4f8QX/IMG-20260607-WA0023.jpg",
+"https://i.ibb.co/7d68QwsS/IMG-20260607-WA0024.jpg",
+"https://i.ibb.co/7xcphJv7/IMG-20260607-WA0028.jpg",
+    ],
+    desc: "سكن دار الريس فيلا 1338، أقرب فيلا للجامعة (7 دقائق مشي). سكن فندقي مكيف بالكامل يوفر خيارات متنوعة للسمر وللعام الدراسي الجديد، مع توافر   إشراف وحراسة مقيمين لضمان الراحة والأمان ومتوفر شقتين للسمر كل شقه 9 أسره وغرفه دبل و 3 غرف تريبل .",
+    features: [
+        "مكيف بالكامل", 
+        "فرش فندقي",  
+        "سيارة خاصة", 
+        "مشرفة وحارس مقيمين", 
+        "راوتر خاص بكل شقة", 
+        "قريب من الجامعة"
+    ],
+    video: ""
 },
 
-    {
-        id: "SK-113",
-        title: "فيلا سكن طالبات - شمال الجامعة (مستوى فندقي)",
-        city: "شمال الجامعة",
-        type: "بنات",
-        price: "1300 جنيه / شهرياً",
-        priceDetails: { "غرفة دابل": "1400 جنيه", "غرفة تريبل": "1300 جنيه" },
-        roomsCount: 3,
-        totalBeds: 7,
-        bedsAvailable: 7,
-        images: [
-            "https://i.ibb.co/jPNLgmgK/IMG-20260606-WA0007.jpg",
-            "https://i.ibb.co/dZbjqg1/IMG-20260606-WA0006.jpg",
-            "https://i.ibb.co/6Jr2w0dj/IMG-20260606-WA0004.jpg",
-            "https://i.ibb.co/ycYvnw2X/IMG-20260606-WA0008.jpg",
-            "https://i.ibb.co/CKpw9bwB/IMG-20260606-WA0002.jpg",
-            "https://i.ibb.co/57hHMh1/IMG-20260606-WA0003.jpg",
-            "https://i.ibb.co/gMq8DCSr/IMG-20260606-WA0005.jpg"
-        ],
-        desc: "فيلا سكن طالبات مميزة مكونة من 4 أدوار، تحتوي على 3 غرف (2 دابل + 1 تريبل) بشمال الجامعة. موقع استراتيجي قريب جداً من سفنكس والجامعة الأهلية، مع توفير كافة سبل الراحة والأمان.",
-        features: ["سيارة خاصة", "كاميرات مراقبة", "إشراف أمني", "ديب فريزر", "واي فاي"],
-        video: "dQw4w9WgXcQ"
-    }
 ];
 
 let filteredRooms = [...roomsData];
