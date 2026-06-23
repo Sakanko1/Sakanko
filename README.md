@@ -19,7 +19,8 @@
 
 ## 🌐 رابط الموقع
 يمكنك زيارة الموقع مباشرة عبر الرابط التالي:
-[https://sakanko1.github.io/Sakanko/](https://sakanko1.github.io/Sakanko/)
+https://sakanko.vercel.app
+
 
 ## 👨‍💻 المساهمة
 المشروع مفتوح للمساهمة! إذا كنت ترغب في إضافة سكنات جديدة أو تحسين الواجهة، يمكنك عمل `Fork` للمشروع وإرسال `Pull Request`.
