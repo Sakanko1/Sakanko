@@ -1,51 +1,44 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <!-- كود أيقونة الموقع لنتائج بحث جوجل (Favicon) -->
-<link rel="icon" href="https://i.ibb.co/RTRXBR8g/Screenshot-2026-06-21-065615.png" sizes="32x32" type="image/png">
-<link rel="icon" href="https://i.ibb.co/RTRXBR8g/Screenshot-2026-06-21-065615.png" sizes="48x48" type="image/png">
-<link rel="apple-touch-icon" href="https://i.ibb.co/RTRXBR8g/Screenshot-2026-06-21-065615.png">
-
-<!-- تعريف اسم وصورة الموقع لمنصات التواصل (Open Graph) -->
-<meta property="og:site_name" content="سكنكو">
-<meta property="og:image" content="https://i.ibb.co/RTRXBR8g/Screenshot-2026-06-21-065615.png">
-
-<!-- كود الـ Schema لتعريف جوجل باسم موقعك الرسمي لتجنب كلمة Vercel -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "سكنكو",
-  "url": "https://sakanko.vercel.app/"
-}
-</script>
-    <meta name="google-site-verification" content="KxU8Tgb3nu0MKUtvXD2m5OuHoY0ONVPNOAWVJsAcVGs" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="KxU8Tgb3nu0MKUtvXD2m5OuHoY0ONVPNOAWVJsAcVGs" />
     
-    <title>سكنكو | منصة البحث عن سكن للطلاب في أسيوط الجديدة</title>
+    <title>سكنكو | Sakanko - سكن الطلاب بدون وسيط</title>
     <meta name="description" content="تبحث عن سكن طلابي في أسيوط الجديدة؟ منصة سكنكو توفر لك قائمة متنوعة من السكنات للطلاب والطالبات مع صور وتفاصيل الأسعار والمسافات.">
     <meta name="keywords" content="سكن طلاب، أسيوط الجديدة، سكنكو، سكن بنات، سكن أولاد، جامعة أسيوط الأهلية">
 
-    <style>
-        /* كود الـ CSS الخاص بك */
-    </style>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>سكنكو | Sakanko - سكن الطلاب بدون وسيط</title>
+    <link rel="icon" href="https://i.ibb.co/RTRXBR8g/Screenshot-2026-06-21-065615.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="https://i.ibb.co/RTRXBR8g/Screenshot-2026-06-21-065615.png" sizes="48x48" type="image/png">
+    <link rel="apple-touch-icon" href="https://i.ibb.co/RTRXBR8g/Screenshot-2026-06-21-065615.png">
+
+    <meta property="og:site_name" content="سكنكو">
+    <meta property="og:image" content="https://i.ibb.co/RTRXBR8g/Screenshot-2026-06-21-065615.png">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "سكنكو",
+      "url": "https://sakanko.vercel.app/"
+    }
+    </script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
         /* إعدادات الخطوط والألوان العامة المستوحاة من اللوجو */
         @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap');
         
         :root {
-            --primary-color: #6c2ba1; /* اللون البنفسجي الأساسي للوجو */
-            --secondary-color: #ffb703; /* اللون الأصفر/البرتقالي */
+            --primary-color: #6c2ba1;
+            --secondary-color: #ffb703;
             --dark-color: #2b2d42;
             --light-color: #f8f9fa;
             --grey-color: #8d99ae;
-            --success-color: #2ec4b6; /* لون أخضر للحالة المتاحة */
-            --danger-color: #e63946; /* لون أحمر للمكتمل */
+            --success-color: #2ec4b6;
+            --danger-color: #e63946;
             
             /* ألوان الثيم الافتراضي (ليلي) */
             --bg-body: #521d7d;
@@ -65,7 +58,6 @@
             --bg-feature-hover: rgba(255, 255, 255, 0.18);
         }
 
-        /* تعديل الألوان عند تفعيل الوضع النهاري (Light Mode) */
         body.light-mode {
             --bg-body: #f4edf8;
             --text-body: #2b2d42;
@@ -91,14 +83,12 @@
             font-family: 'Cairo', sans-serif;
         }
 
-        /* تعديل الخلفية لتصبح باللون البنفسجي المريح */
         body {
             background-color: var(--bg-body); 
             color: var(--text-body);
             transition: background-color 0.3s, color 0.3s;
         }
 
-        /* الهيدر ونظام التنقل */
         header {
             background-color: var(--bg-header);
             box-shadow: 0 2px 10px rgba(0,0,0,0.2);
@@ -116,7 +106,6 @@
             padding: 10px 20px;
         }
 
-        /* تنسيق حاوية اللوجو ليدعم الصورة والكتابة معاً */
         .logo {
             display: flex;
             align-items: center;
@@ -144,7 +133,6 @@
             align-items: center;
         }
 
-        /* تنسيق زر تبديل الثيم الجديد والمودرن */
         .theme-toggle-btn {
             background: var(--bg-reset-btn);
             color: var(--primary-color);
@@ -167,7 +155,6 @@
             transform: scale(1.05);
         }
 
-        /* قسم البانر والترحيب الرئيسي */
         .hero-section {
             max-width: 1200px;
             margin: 30px auto 20px auto;
@@ -203,9 +190,6 @@
             color: #f1e6ff;
         }
 
-        /* ==================================================== */
-        /* بار الفلاتر المودرن مع زر إعادة التعيين الذكي */
-        /* ==================================================== */
         .filter-section {
             max-width: 1200px;
             margin: 0 auto 30px auto;
@@ -268,7 +252,6 @@
             box-shadow: 0 0 0 3px rgba(108, 43, 161, 0.12);
         }
 
-        /* ستايل زر إعادة التعيين المودرن والشيك */
         .btn-reset-filter {
             background: var(--bg-reset-btn);
             color: var(--primary-color);
@@ -295,7 +278,6 @@
             transform: scale(0.95);
         }
 
-        /* أنيميشن الدوران عند الضغط على إعادة التعيين */
         .spin-animation {
             animation: spinEffect 0.5s ease-in-out;
         }
@@ -305,7 +287,6 @@
             to { transform: rotate(-360deg); }
         }
 
-        /* شبكة عرض السكنات والكروت */
         .listings-container {
             max-width: 1200px;
             margin: 0 auto 40px auto;
@@ -342,9 +323,9 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: center;
         }
 
-        /* تنسيق كود الـ ID المميز أعلى الكارت */
         .badge-id {
             position: absolute;
             top: 15px;
@@ -372,7 +353,6 @@
             z-index: 2;
         }
 
-        /* بادج إضافي يظهر لو السكن مكتمل الحجز تماماً */
         .badge-status-full {
             position: absolute;
             bottom: 15px;
@@ -420,7 +400,6 @@
             width: 18px;
         }
 
-        /* ستايل مخصص لعرض حالة عدد السراير المتاحة */
         .bed-status {
             font-weight: 700;
         }
@@ -477,7 +456,6 @@
             background-color: #e5a500;
         }
 
-        /* تعطيل زر الحجز لو السكن مليان */
         .btn-disabled {
             background-color: #ccc !important;
             color: #666 !important;
@@ -485,7 +463,6 @@
             pointer-events: none;
         }
 
-        /* تنسيق حاوية وزر عرض المزيد */
         .load-more-container {
             text-align: center;
             margin: 20px auto 60px auto;
@@ -510,9 +487,6 @@
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
         }
 
-        /* ==================================================== */
-        /* ستايل قسم المميزات المطور (كروت جلاس مورفيزم متجاوبة) */
-        /* ==================================================== */
         .features-section {
             max-width: 1200px;
             margin: 60px auto;
@@ -556,7 +530,7 @@
         }
 
         .feature-box {
-            background: var(--bg-feature-box); /* تأثير شفاف */
+            background: var(--bg-feature-box); 
             padding: 30px 20px;
             border-radius: 20px;
             border: 1px solid var(--border-feature-box);
@@ -612,7 +586,6 @@
             color: #555;
         }
 
-        /* نافذة التفاصيل المنبثقة (Modal) */
         .modal {
             position: fixed;
             top: 0;
@@ -670,7 +643,6 @@
             z-index: 10;
         }
 
-        /* معرض الصور داخل الـ Modal */
         .modal-gallery {
             background: #f1f1f1;
             padding: 10px;
@@ -717,6 +689,19 @@
             color: var(--primary-color);
         }
 
+        .modal-body img, .modal-content img {
+            width: 100%;
+            max-height: 450px; 
+            object-fit: contain; 
+            background-color: #f8f9fa; 
+        }
+
+        .thumbnail-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
         .modal-desc {
             margin-bottom: 20px;
             line-height: 1.8;
@@ -745,7 +730,6 @@
             color: var(--primary-color);
         }
 
-        /* الفوتر */
         footer {
             background-color: #3b115c; 
             color: #fff;
@@ -814,9 +798,6 @@
             color: #cbb4e4; 
         }
 
-        /* ==================================================== */
-        /* التعديل المتناسق لعرض العناصر على شاشات الموبايل */
-        /* ==================================================== */
         @media (max-width: 576px) {
             .filter-section {
                 padding: 10px 12px;
@@ -855,7 +836,6 @@
                 font-size: 14px;
             }
 
-            /* عرض ميزتين في الصف الواحد بشكل متناسق في الموبايل */
             .features-grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 12px;
@@ -882,7 +862,6 @@
                 line-height: 1.4;
             }
 
-            /* شبكة الكروت للسكنات */
             .listings-grid {
                 grid-template-columns: repeat(2, 1fr); 
                 gap: 10px; 
@@ -955,31 +934,10 @@
                 height: 120px; 
             }
         }
-        .card-img-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-}
-/* تنسيق الصورة الكبيرة جوة المودال لمنع البكسلة والتمطيط */
-.modal-body img, .modal-content img {
-    width: 100%;
-    max-height: 450px; /* بيمنع الصورة إنها تكبر زيادة عن اللزوم فتبكسل */
-    object-fit: contain; /* بيحافظ على أبعاد الصورة الأصلية ونقائها جوة الإطار */
-    background-color: #f8f9fa; /* خلفية خفيفة مريحة للعين لو الصورة ليها أبعاد مختلفة */
-}
-
-/* تنسيق الصور المصغرة (Thumbnails) اللي تحت عشان تظهر دايماً حادة ونقية */
-.thumbnail-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
     </style>
 </head>
-<body>
-    
 
+<body>
     <header>
         <nav class="navbar">
             <a href="#" class="logo">
@@ -987,7 +945,6 @@
                 سكنـ<span>كو</span>
             </a>
             <ul class="nav-links">
-                <!-- تم استبدال كلمة الرئيسية بزر تغيير الثيم التفاعلي -->
                 <li>
                     <button class="theme-toggle-btn" onclick="toggleTheme()">
                         <i id="theme-icon" class="fa-solid fa-sun"></i>
@@ -1102,7 +1059,7 @@
         </div>
     </div>
 
-  <footer>
+    <footer>
         <div class="footer-content">
             <div class="footer-section">
                 <h3>عن سكنكو</h3>
@@ -1113,41 +1070,36 @@
                 <div class="social-icons">
                     <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
                     <a href="https://tiktok.com" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
-                 <a href="https://wa.me/201025910607?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%20%D8%B3%D9%83%D9%86%D9%83%D9%88%20%F0%9F%91%8B" target="_blank">
-    <i class="fa-brands fa-whatsapp"></i>
-</a>
+                    <a href="https://wa.me/201025910607?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%20%D8%B3%D9%83%D9%86%D9%83%D9%88%20%F0%9F%91%8B" target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
                 </div>
             </div>
             <div class="footer-section">
                 <h3>تواصل معنا</h3>
                 <p><i class="fa-solid fa-envelope"></i> sakanko.official@gmail.com</p>
                 <p><i class="fa-solid fa-phone"></i> 01013479125</p>
-                
             </div>
         </div>
-        <div class="footer-bottom">
-            &copy; 2026 جميع الحقوق محفوظة لمنصة سكنكو - دور أقل اسكن أسرع.
-        </div>
-        <div class="footer-bottom" style="text-align: center; padding: 20px 10px; background: transparent; font-family: 'Cairo', sans-serif;">
-    <p style="margin: 0; color: var(--light-color); font-size: 14px;"></p>
-    <p style="margin: 8px 0 0 0; font-size: 13px; color: var(--grey-color);">
-        Developed with ❤️ by 
-        <a href="https://wa.me/201013479125" target="_blank" style="color: var(--secondary-color); text-decoration: none; font-weight: bold; transition: 0.3s;" onmouseover="this.style.color='var(--primary-color)'" onmouseout="this.style.color='var(--secondary-color)'">
-            Yasser Nasser
-        </a> 
-        & 
-        <a href="https://wa.me/201025610607" target="_blank" style="color: var(--secondary-color); text-decoration: none; font-weight: bold; transition: 0.3s;" onmouseover="this.style.color='var(--primary-color)'" onmouseout="this.style.color='var(--secondary-color)'">
-            Mohammed Hassan
-        </a>
-        <i class="fa-solid fa-code" style="font-size: 11px; margin-left: 5px; color: var(--grey-color);"></i>
-    </p>
-</div>
         
+        <div class="footer-bottom" style="text-align: center; padding: 20px 10px; background: transparent; font-family: 'Cairo', sans-serif;">
+            <p style="margin: 0; color: var(--light-color); font-size: 14px;">&copy; 2026 جميع الحقوق محفوظة لمنصة سكنكو - دور أقل اسكن أسرع.</p>
+            <p style="margin: 8px 0 0 0; font-size: 13px; color: var(--grey-color);">
+                Developed with ❤️ by 
+                <a href="https://wa.me/201013479125" target="_blank" style="color: var(--secondary-color); text-decoration: none; font-weight: bold; transition: 0.3s;" onmouseover="this.style.color='var(--primary-color)'" onmouseout="this.style.color='var(--secondary-color)'">
+                    Yasser Nasser
+                </a> 
+                & 
+                <a href="https://wa.me/201025610607" target="_blank" style="color: var(--secondary-color); text-decoration: none; font-weight: bold; transition: 0.3s;" onmouseover="this.style.color='var(--primary-color)'" onmouseout="this.style.color='var(--secondary-color)'">
+                    Mohammed Hassan
+                </a>
+                <i class="fa-solid fa-code" style="font-size: 11px; margin-left: 5px; color: var(--grey-color);"></i>
+            </p>
+        </div>
     </footer>
 
-  <script src="data.js"></script>
-    <script src="sheet.js"></script>
-    <script>
+    <script src="data.js"></script>
+    <script src="script.js"></script> <script>
         window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
     </script>
     <script defer src="/_vercel/insights/script.js"></script>

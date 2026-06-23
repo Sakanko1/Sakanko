@@ -2,41 +2,41 @@
 // ملف data.js - سكنكو (معدل)
 // ==========================================
 
+// --- الدالة الذكية لتنظيف الروابط (تم إضافتها هنا) ---
+function getCleanUrl(url) {
+    if (typeof url !== 'string') return url;
+    if (url.includes('<img')) {
+        const match = url.match(/src=["'](.*?)["']/);
+        return match ? match[1] : url;
+    }
+    return url;
+}
+// ---------------------------------------------------
+
 function closeModal() {
     document.getElementById("details-modal").classList.remove("active");
 }
+
 const roomsData = [
 {
     id: "SK-101",
-    title: "سكن شباب بالمرحلة الرابعة - موقع متميز",
+    title: "سكن شباب متميز - 17 ط أمام كافتريا قصر الشوق",
     city: "المرحلة الرابعة",
     type: "شباب",
-    price: "1000 جنيه / شهرياً للسرير",
+    price: "1750 جنيه / شهرياً",
     roomsCount: 2, 
-    totalBeds: 5,
-    bedsAvailable: 5,
+    totalBeds: 4,
+    bedsAvailable: 4,
     images: [
-        "https://i.ibb.co/KxFWsYkT/image.jpg",
-        "https://i.ibb.co/Z1vfkT9B/image.jpg",
-        "https://i.ibb.co/KcCbRSDM/image.jpg",
-        "https://i.ibb.co/yFpJmmFV/image.jpg",
-        "https://i.ibb.co/m5gFHGW3/image.jpg",
-        "https://i.ibb.co/xq34QM2x/image.jpg",
-        "https://i.ibb.co/NnyQjH4C/image.jpg",
-        "https://i.ibb.co/XrK67Fds/image.jpg",
-        "https://i.ibb.co/mCWLypNv/image.jpg",
-        "https://i.ibb.co/DDbsHnTB/image.jpg",
-        "https://i.ibb.co/tpf73HCW/image.jpg",
-        "https://i.ibb.co/PZ51wJXH/image.jpg",
-        "https://i.ibb.co/VpmWK8WH/image.jpg",
-        "https://i.ibb.co/JRJhhnvr/image.jpg",
-        "https://i.ibb.co/prGHCT86/image.jpg",
-        "https://i.ibb.co/r2jNK7BN/image.jpg"
+        "https://i.ibb.co/1G0hSzcn/IMG-20260607-WA0155.jpg",
+        "https://i.ibb.co/q3JGX17K/IMG-20260607-WA0154.jpg",
+        "https://i.ibb.co/twQRghvT/IMG-20260607-WA0153.jpg",
+        "https://i.ibb.co/Nd0yCmwy/IMG-20260607-WA0152.jpg"
     ],
-    desc: "شقة مميزة في المرحلة الرابعة بجوار الخدمات والجامع مباشرة، وموقع استراتيجي خلف الجامعة. توفر إقامة مريحة للشباب بسعر اقتصادي.",
-    features: ["موقع استراتيجي", "بجوار الجامع", "قرب الجامعة", "خدمات متكاملة"]
+    desc: "سكن شباب بموقع متميز في 17 ط، أمام كافتريا قصر الشوق مباشرة. السكن مجهز بتكييفين (حالة زيرو) لضمان أعلى درجات الراحة. مثالي للطلاب الباحثين عن الهدوء والخدمات المتكاملة.",
+    features: ["تكييفين بحالة الزيرو", "موقع حيوي", "قرب الخدمات", "مساحة مريحة"]
 },
-    {
+   {
     id: "SK-102",
     title: "شقة مميزة بالمرحلة الرابعة - بجوار الجامعة الأهلية",
     city: "المرحلة الرابعة",
@@ -46,18 +46,15 @@ const roomsData = [
     totalBeds: 5,
     bedsAvailable: 5,
     images: [
-        "https://i.ibb.co/49hpXTs/image.jpg",
-        "https://i.ibb.co/m5FNPqgX/image.jpg",
-        "https://i.ibb.co/1YRwWNRP/image.jpg",
-        "https://i.ibb.co/9mh1dCVq/image.jpg",
-        "https://i.ibb.co/LdSTZ6d0/image.jpg",
-        "https://i.ibb.co/nq9QXMBv/image.jpg",
-        "https://i.ibb.co/Xxv3GrQ1/image.jpg",
-        "https://i.ibb.co/Mkrcf8zT/image.jpg",
-        "https://i.ibb.co/tMdBf9KP/image.jpg",
-        "https://i.ibb.co/rKdPv1v3/image.jpg",
-        "https://i.ibb.co/MxMcvFqV/image.jpg",
-        "https://i.ibb.co/W49Zs5Kc/image.jpg"
+"https://i.ibb.co/WvbvBg0R/IMG-20260606-WA0088.jpg",
+"https://i.ibb.co/dwN33J9J/IMG-20260606-WA0087.jpg",
+"https://i.ibb.co/7JmnjVF0/IMG-20260606-WA0086.jpg",
+"https://i.ibb.co/d4xxHP2v/IMG-20260606-WA0085.jpg",
+"https://i.ibb.co/67xW67R8/IMG-20260606-WA0084.jpg",
+"https://i.ibb.co/Cs48nf7n/IMG-20260606-WA0083.jpg",
+"https://i.ibb.co/mFgrDX0m/IMG-20260606-WA0082.jpg",
+"https://i.ibb.co/q3Ptt4Qv/IMG-20260606-WA0081.jpg",
+"https://i.ibb.co/4gYHvk4q/IMG-20260606-WA0080.jpg",
     ],
     desc: "شقة في موقع استراتيجي بالمرحلة الرابعة على الشارع الرئيسي، بجوار الجامعة الأهلية وقسم الشرطة ومديرية الأمن مباشرة. خدمات متكاملة خلف البيت، ومواصلات متوفرة أمام البيت مباشرة. السعر للعام الجديد.",
     features: ["موقع مميز", "قرب المواصلات", "بجوار الجامعة", "خدمات متوفرة"]
@@ -65,17 +62,17 @@ const roomsData = [
     {
     id: "SK-103",
     title: "سكن شباب متميز - 17 ط أمام كافتريا قصر الشوق",
-    city: "17 ط",
+    city: "السوق القديم",
     type: "شباب",
     price: "1750 جنيه / شهرياً",
     roomsCount: 2, 
     totalBeds: 4,
     bedsAvailable: 4,
     images: [
-        "https://i.ibb.co/bgfPCnRH/Whats-App-Image-2026-06-21-at-2-11-56-PM.jpg",
-        "https://i.ibb.co/RGMMwVcg/Whats-App-Image-2026-06-21-at-2-11-59-PM.jpg",
-        "https://i.ibb.co/FqjHdXxW/Whats-App-Image-2026-06-21-at-2-12-01-PM.jpg",
-        "https://i.ibb.co/mC5pz181/Whats-App-Image-2026-06-21-at-2-12-03-PM.jpg"
+"https://i.ibb.co/1G0hSzcn/IMG-20260607-WA0155.jpg",
+"https://i.ibb.co/q3JGX17K/IMG-20260607-WA0154.jpg",
+"https://i.ibb.co/twQRghvT/IMG-20260607-WA0153.jpg",
+"https://i.ibb.co/Nd0yCmwy/IMG-20260607-WA0152.jpg",
     ],
     desc: "سكن شباب بموقع متميز في 17 ط، أمام كافتريا قصر الشوق مباشرة. السكن مجهز بتكييفين (حالة زيرو) لضمان أعلى درجات الراحة. مثالي للطلاب الباحثين عن الهدوء والخدمات المتكاملة.",
     features: ["تكييفين بحالة الزيرو", "موقع حيوي", "قرب الخدمات", "مساحة مريحة"]
@@ -86,6 +83,7 @@ const roomsData = [
     city: "المرحلة العاجلة",
     type: "شباب", // أو "بنات" حسب التوجيه
     price: "9000 جنيه / شهرياً",
+    priceDetails: { "غرفة دابل": "1400 جنيه", "غرفة تريبل": "1300 جنيه" , "غرفة سنجل": "1200 جنيه" },
     roomsCount: 3, 
     totalBeds: 6, // تم تقديرها بناءً على تقسيم الغرف (تربل، دبل، سنجل)
     bedsAvailable: 6,
@@ -241,7 +239,10 @@ function renderCards() {
                     <span class="badge-id">${room.id}</span>
                     <span class="badge-type">${room.type}</span>
                     ${isFull ? '<div class="badge-status-full">مكتمل</div>' : ''}
-                    <img src="${room.images[0]}" alt="${room.title}">
+                    
+                    <!-- تم تعديل السطر ده علشان يستخدم الدالة الذكية -->
+                    <img src="${getCleanUrl(room.images[0])}" alt="${room.title}">
+                    
                 </div>
                 <div class="card-content">
                     <h3 class="card-title">${room.title}</h3>
@@ -303,22 +304,24 @@ function openModal(roomId) {
     document.getElementById("modal-title").innerText = room.title;
     document.getElementById("modal-desc").innerText = room.desc;
     
-    document.getElementById("modal-img").src = room.images[0];
+    document.getElementById("modal-img").src = getCleanUrl(room.images[0]);
 
     const thumbnailsContainer = document.getElementById("modal-thumbnails");
     thumbnailsContainer.innerHTML = ""; 
     if (room.images.length > 1) {
         room.images.forEach((imgSrc, index) => {
             const thumb = document.createElement("img");
-            thumb.src = imgSrc;
+            thumb.src = getCleanUrl(imgSrc);
+
             thumb.alt = "صورة مصغرة للسكن";
             if(index === 0) thumb.classList.add("active-thumb");
             
             thumb.onclick = function() {
-                document.getElementById("modal-img").src = imgSrc;
-                document.querySelectorAll("#modal-thumbnails img").forEach(img => img.classList.remove("active-thumb"));
-                this.classList.add("active-thumb");
-            };
+                    document.getElementById("modal-img").src = getCleanUrl(imgSrc); 
+                    
+                    document.querySelectorAll("#modal-thumbnails img").forEach(img => img.classList.remove("active-thumb"));
+                    this.classList.add("active-thumb");
+                };
             thumbnailsContainer.appendChild(thumb);
         });
     }
