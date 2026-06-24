@@ -22,7 +22,7 @@ const roomsData = [
     id: "SK-101",
     title: "فيلا 319 -  السوق القديم (أمام مسجد الصحابة)",
     city: "السوق القديم",
-    type: "شباب",
+    type: "بنات",
     price: "1350 جنيه / شهرياً",
     priceDetails: { "غرفة تريبل": "1350 جنيه" , "غرفة دابل": "1500 جنيه", "غرفة سنجل": "2000 جنيه" },
     roomsCount: 3, 
@@ -148,7 +148,7 @@ const roomsData = [
     price: "1750 جنيه / شهرياً",
     roomsCount: 2, 
     totalBeds: 4,
-    bedsAvailable: 4,
+    bedsAvailable: 0,
     images: [
         "https://i.ibb.co/99pwPfnG/IMG-20260607-WA0155-2.jpg",
         "https://i.ibb.co/fZ5CR0m/IMG-20260607-WA0154-2.jpg",
