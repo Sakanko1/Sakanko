@@ -951,6 +951,11 @@
                         <span id="theme-text">الوضع النهاري</span>
                     </button>
                 </li>
+<li>
+    <button onclick="toggleComments()" style="background: none; border: none; cursor: pointer; font-size: 20px;">
+        💬 <span>التعليقات</span>
+    </button>
+</li>
             </ul>
         </nav>
     </header>
@@ -1108,28 +1113,81 @@
         window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
     </script>
     <script defer src="/_vercel/insights/script.js"></script>
-    <script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
+<div id="comments-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:9999; align-items:center; justify-content:center; direction:rtl;">
+    <div style="background:#fff; width:90%; max-width:500px; padding:20px; border-radius:15px; display:flex; flex-direction:column; gap:15px; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
+        
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+            <h3 style="margin:0; color:#4a148c; font-size: 1.5rem;">التعليقات</h3>
+            <span id="close-modal" style="cursor:pointer; font-size:35px; color:#333; line-height:1;">&times;</span>
+        </div>
 
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: "AIzaSyAbQY1bKYLERq4voqsB4y-wdiusldZMY38",
-    authDomain: "sakanko-comments.firebaseapp.com",
-    projectId: "sakanko-comments",
-    storageBucket: "sakanko-comments.firebasestorage.app",
-    messagingSenderId: "583581786644",
-    appId: "1:583581786644:web:0e002b3c64aecb7ecdbd01",
-    measurementId: "G-NRZ7NEDD9K"
-  };
+        <div id="comments-list" style="height:250px; overflow-y:auto; border:1px solid #ddd; padding:10px; border-radius:8px; background:#f9f9f9;"></div>
 
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
+        <div style="display:flex; gap:10px;">
+            <input type="text" id="comment-input" placeholder="اكتب تعليقك هنا..." style="flex:1; padding:12px; border:1px solid #ccc; border-radius:8px; outline:none;">
+            <button id="submit-comment" style="padding:10px 20px; background:#4a148c; color:white; border:none; border-radius:8px; cursor:pointer; font-weight:bold;">إرسال</button>
+        </div>
+    </div>
+</div>
+
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+    import { getFirestore, collection, addDoc, onSnapshot, query, orderBy } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+
+    const firebaseConfig = {
+        apiKey: "AIzaSyABQy1bKYLER4qvoqsB4y-wdiusldZMY38",
+        authDomain: "sakanko-comments.firebaseapp.com",
+        projectId: "sakanko-comments",
+        storageBucket: "sakanko-comments.appspot.com",
+        messagingSenderId: "583581786644",
+        appId: "1:583581786644:web:e002b3c64aecb7ecdbd01",
+        measurementId: "G-NRZ7NEDD9K"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    // دالة فتح النافذة (مربوطة بالـ window عشان الزرار الخارجي يشوفها)
+    window.toggleComments = () => {
+        const modal = document.getElementById("comments-modal");
+        modal.style.display = (modal.style.display === "flex") ? "none" : "flex";
+    };
+
+    // انتظر تحميل الصفحة بالكامل
+    document.addEventListener("DOMContentLoaded", () => {
+        
+        // ربط زر الإرسال
+        document.getElementById("submit-comment").addEventListener("click", async () => {
+            const input = document.getElementById("comment-input");
+            if(input.value.trim() !== ""){
+                await addDoc(collection(db, "comments"), { text: input.value, timestamp: new Date() });
+                input.value = "";
+            }
+        });
+
+        // ربط زر الإغلاق
+        document.getElementById("close-modal").addEventListener("click", () => {
+            document.getElementById("comments-modal").style.display = "none";
+        });
+
+        // جلب وعرض التعليقات (وضعناها هنا داخل الـ DOMContentLoaded عشان نضمن وجود الـ list)
+        const q = query(collection(db, "comments"), orderBy("timestamp", "asc"));
+        onSnapshot(q, (snapshot) => {
+            const list = document.getElementById("comments-list");
+            if(list) {
+                list.innerHTML = "";
+                snapshot.forEach((doc) => {
+                    const p = document.createElement("p");
+                    p.style.borderBottom = "1px solid #eee";
+                    p.style.padding = "5px";
+                    p.textContent = doc.data().text;
+                    list.appendChild(p);
+                });
+            }
+        });
+    });
 </script>
+
+</div>
 </body>
 </html>
