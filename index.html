@@ -1132,7 +1132,7 @@
 
 <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
-    import { getFirestore, collection, addDoc, onSnapshot, query, orderBy } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+    import { getFirestore, collection, onSnapshot, query, orderBy, addDoc } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
 
     const firebaseConfig = {
         apiKey: "AIzaSyABQy1bKYLER4qvoqsB4y-wdiusldZMY38",
@@ -1147,43 +1147,55 @@
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
 
-    // دالة فتح النافذة (مربوطة بالـ window عشان الزرار الخارجي يشوفها)
+    // دالة الفتح
     window.toggleComments = () => {
         const modal = document.getElementById("comments-modal");
         modal.style.display = (modal.style.display === "flex") ? "none" : "flex";
     };
 
-    // انتظر تحميل الصفحة بالكامل
     document.addEventListener("DOMContentLoaded", () => {
-        
+        console.log("جاري الاتصال بـ Firebase...");
+
         // ربط زر الإرسال
         document.getElementById("submit-comment").addEventListener("click", async () => {
             const input = document.getElementById("comment-input");
             if(input.value.trim() !== ""){
                 await addDoc(collection(db, "comments"), { text: input.value, timestamp: new Date() });
                 input.value = "";
+                console.log("تم إضافة تعليق جديد!");
             }
         });
 
-        // ربط زر الإغلاق
+        // ربط الإغلاق
         document.getElementById("close-modal").addEventListener("click", () => {
             document.getElementById("comments-modal").style.display = "none";
         });
 
-        // جلب وعرض التعليقات (وضعناها هنا داخل الـ DOMContentLoaded عشان نضمن وجود الـ list)
-        const q = query(collection(db, "comments"), orderBy("timestamp", "asc"));
+        // محاولة جلب التعليقات (بدون orderBy في البداية للاختبار)
+        const q = query(collection(db, "comments")); 
+        
         onSnapshot(q, (snapshot) => {
+            console.log("تحديث جديد من Firebase! عدد التعليقات:", snapshot.size);
             const list = document.getElementById("comments-list");
-            if(list) {
-                list.innerHTML = "";
-                snapshot.forEach((doc) => {
-                    const p = document.createElement("p");
-                    p.style.borderBottom = "1px solid #eee";
-                    p.style.padding = "5px";
-                    p.textContent = doc.data().text;
-                    list.appendChild(p);
-                });
-            }
+            list.innerHTML = "";
+           snapshot.forEach((doc) => {
+            const data = doc.data();
+            console.log("جار عرض تعليق:", data.text);
+            const p = document.createElement("p");
+            
+            // هنا التنسيق الجديد عشان اللون يظهر
+            p.style.backgroundColor = "#ffffff"; // خلفية بيضاء
+            p.style.color = "#333333";           // لون الخط
+            p.style.padding = "10px";            // مساحة داخلية
+            p.style.borderRadius = "8px";        // زوايا دائرية
+            p.style.border = "1px solid #ddd";   // إطار خفيف
+            p.style.marginBottom = "8px";        // مسافة بين التعليقات
+            
+            p.textContent = data.text || "لا يوجد نص";
+            list.appendChild(p);
+            });
+        }, (error) => {
+            console.error("خطأ في Firebase:", error);
         });
     });
 </script>
