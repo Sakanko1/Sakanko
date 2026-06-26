@@ -265,6 +265,92 @@ video: "eBThBBHF8M0",
 
 },
 
+{
+    id: "SK-111",
+    title: "سكن طلاب - المرحلة الثانية",
+    city: "المرحلة الثانية",
+    type: "شباب",
+    price: "1100 جنيه / شهرياً",
+    priceDetails: { "سعر موحد": "1100 جنيه" },
+    roomsCount: 2,
+    totalBeds: 4,
+    bedsAvailable: 4,
+    images: [
+        "https://i.ibb.co/Xx5S2q1x/IMG-20260624-WA0105.jpg",
+        "https://i.ibb.co/cXhmzr8H/IMG-20260624-WA0003.jpg",
+        "https://i.ibb.co/d4qMpq0H/IMG-20260624-WA0000.jpg",
+        "https://i.ibb.co/d44Pd31w/IMG-20260624-WA0001.jpg",
+        "https://i.ibb.co/1GztX3B0/IMG-20260624-WA0002.jpg",
+        "https://i.ibb.co/Xr0bbCXD/IMG-20260624-WA0004.jpg",
+        "https://i.ibb.co/fGkrjVBd/IMG-20260624-WA0005.jpg",
+        "https://i.ibb.co/CpgjjTsp/IMG-20260624-WA0106.jpg",
+        "https://i.ibb.co/twQpjLxj/IMG-20260624-WA0006.jpg"
+    ],
+    desc: "سكن متميز في المرحلة الثانية، موقع استراتيجي قريب جداً من المرحلة الرابعة، العشر عماير، عماير محلب، وسوبر ماركت عالم التوفير. السكن مجهز لتوفير بيئة مريحة وهادئة للطلاب.",
+    features: ["موقع حيوي", "قريب من الخدمات", "سوبر ماركت قريب", "هدوء"],
+    video: ""
+},
+
+{
+    id: "SK-112",
+    title: "سكن عماير محلب (بجوار دبور)",
+    city: "عماير محلب",
+    type: "شباب",
+    price: "1200 جنيه / شهرياً",
+    roomsCount: 3, 
+    totalBeds: 6,
+    bedsAvailable: 6,
+    images: [
+        "https://i.ibb.co/5h8gyRqq/IMG-20260624-WA0025.jpg",
+        "https://i.ibb.co/LdqsSsyt/IMG-20260624-WA0020.jpg",
+        "https://i.ibb.co/5gNxRD4m/IMG-20260624-WA0015.jpg",
+        "https://i.ibb.co/gbn6n1dR/IMG-20260624-WA0017.jpg",
+        "https://i.ibb.co/BbyNNHj/IMG-20260624-WA0018.jpg",
+        "https://i.ibb.co/spXhtJsK/IMG-20260624-WA0021.jpg",
+        "https://i.ibb.co/ksrWqbHF/IMG-20260624-WA0023.jpg",
+        "https://i.ibb.co/BVNY6VZg/IMG-20260624-WA0024.jpg",
+        "https://i.ibb.co/Q3pfcFgb/IMG-20260624-WA0016.jpg",
+        "https://i.ibb.co/SX3FbgxQ/IMG-20260624-WA0022.jpg",
+        "https://i.ibb.co/QFkgVKR7/IMG-20260624-WA0013.jpg",
+        "https://i.ibb.co/JjBK2ws6/IMG-20260624-WA0019.jpg",
+        "https://i.ibb.co/pj7bLq4d/IMG-20260624-WA0014.jpg" 
+    ],
+    desc: "سكن في عماير محلب بجوار دبور، قريب من الخدمات زي السوبر ماركت والمكتبة والمطعم والمواصلات. السكن مجهز بسخان وموتور مياه وديب فريزر وخلاط. ملحوظة هامة: لو حد عايز ياخد أوضة لوحده هتبقى بـ 2000 جنيه بدلاً من 2400 جنيه.",   
+    features: ["قريب من الخدمات والمواصلات", "بجوار دبور", "مجهز بالأجهزة الكهربائية", "موتور مياه"], 
+    video: "",
+},
+
+{
+    id: "SK-113",
+    title: "سكن مجهز بجوار ملعب أم يوسف",
+    city: "السوق القديم",
+    type: "شباب",
+    price: "1700 جنيه / شهرياً",
+    roomsCount: 2, 
+    totalBeds: 4,
+    bedsAvailable: 4,
+    images: [
+        "https://i.ibb.co/Kc6vPcGf/IMG-20260624-WA0041.jpg",
+        "https://i.ibb.co/bg7g8r8N/IMG-20260624-WA0031.jpg",
+        "https://i.ibb.co/Fk9bcXtR/IMG-20260624-WA0026.jpg",
+        "https://i.ibb.co/v4yWDSFt/IMG-20260624-WA0036.jpg",
+        "https://i.ibb.co/N6b9Q2S3/IMG-20260624-WA0033.jpg",
+        "https://i.ibb.co/fGHYgzxT/IMG-20260624-WA0029.jpg",
+        "https://i.ibb.co/21qffZtc/IMG-20260624-WA0034.jpg",
+        "https://i.ibb.co/FkWNhF0P/IMG-20260624-WA0035.jpg",
+        "https://i.ibb.co/FL6TWbgF/IMG-20260624-WA0028.jpg",
+        "https://i.ibb.co/Xfnn1wHQ/IMG-20260624-WA0040.jpg",
+        "https://i.ibb.co/99Cnym4j/IMG-20260624-WA0037.jpg",
+        "https://i.ibb.co/0yC6tF6K/IMG-20260624-WA0032.jpg",
+        "https://i.ibb.co/BVqyXcQk/IMG-20260624-WA0038.jpg",
+        "https://i.ibb.co/99Q1gbGf/IMG-20260624-WA0030.jpg",
+        "https://i.ibb.co/gFgjCVrb/IMG-20260624-WA0027.jpg"
+    ],
+    desc: "شقة مجهزة بالكامل في منطقة حيوية بالسوق القديم بجوار ملعب أم يوسف، متوفر بها كافة الأجهزة، وقريبة جداً من جميع الخدمات ومواصلات الجامعة والموقف.",   
+    features: ["إنترنت (واي فاي)", "تلفزيون", "غسالة وثلاجة", "سخان وخلاط", "منطقة حيوية", "قريب من المواصلات"], 
+    video: "",
+},
+
 ];
 
 let filteredRooms = [...roomsData];
