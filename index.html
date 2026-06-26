@@ -1129,49 +1129,67 @@
 </div>
 
 <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
-    import { getFirestore, collection, onSnapshot, addDoc, query, orderBy } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+import { getFirestore, collection, onSnapshot, addDoc, query, orderBy } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
 
-    const db = getFirestore(initializeApp({
-        apiKey: "AIzaSyABQy1bKYLER4qvoqsB4y-wdiusldZMY38",
-        projectId: "sakanko-comments"
-    }));
+const db = getFirestore(initializeApp({
+    apiKey: "AIzaSyABQy1bKYLER4qvoqsB4y-wdiusldZMY38",
+    projectId: "sakanko-comments"
+}));
 
-    document.getElementById("open-comments-btn").onclick = () => document.getElementById("comments-modal").style.display = "flex";
-    document.getElementById("close-modal").onclick = () => document.getElementById("comments-modal").style.display = "none";
+// 1. فتح وغلق النافذة
+document.getElementById("open-comments-btn").onclick = () => document.getElementById("comments-modal").style.display = "flex";
+document.getElementById("close-modal").onclick = () => document.getElementById("comments-modal").style.display = "none";
 
-    document.getElementById("submit-comment").onclick = async () => {
-        const u = document.getElementById("username-input").value;
-        const t = document.getElementById("comment-input").value;
-        if(u.trim() && t.trim()) {
-            await addDoc(collection(db, "comments"), { username: u, text: t, timestamp: new Date() });
-            document.getElementById("comment-input").value = "";
-        }
-    };
+// 2. كود الإرسال (حطه هنا)
+document.getElementById("submit-comment").onclick = async () => {
+    const nameInput = document.getElementById("username-input");
+    const t = document.getElementById("comment-input");
+    
+    if(nameInput.value.trim() && t.value.trim()) {
+        // التحقق: هل كتب كلمة السر؟
+        const isSecretCode = nameInput.value.includes("#123");
+        const cleanName = nameInput.value.replace("#123", "").trim();
+        
+        // هنا السر: بنبعت 'isAdmin' للقاعدة نفسها
+        await addDoc(collection(db, "comments"), { 
+            username: cleanName,
+            isAdmin: isSecretCode, // دي المعلومة اللي هتتخزن في القاعدة
+            text: t.value, 
+            timestamp: new Date() 
+        });
+        t.value = "";
+    }
+};
 
-  // أضف orderBy في الـ import فوق لو مش موجودة:
-// import { ..., orderBy } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
-
-// ثم عدل سطر الاستعلام (Query) هنا:
+// 3. كود العرض (الترتيب والألوان)
 onSnapshot(query(collection(db, "comments"), orderBy("timestamp", "desc")), (snap) => {
     const list = document.getElementById("comments-list");
     list.innerHTML = "";
     snap.forEach(doc => {
         const d = doc.data();
-        // التاريخ والوقت مع بعض
         const dateObj = d.timestamp ? d.timestamp.toDate() : new Date();
         const dateStr = dateObj.toLocaleDateString('ar-EG') + ' - ' + dateObj.toLocaleTimeString('ar-EG', { hour: '2-digit', minute: '2-digit' });
         
+        // الكود هنا بيقرأ المعلومة من 'd.isAdmin' اللي لسه محفوظ في القاعدة
+        const isAdmin = d.isAdmin === true; 
+        const bgColor = isAdmin ? "#fce4ec" : "#fff";
+        const border = isAdmin ? "2px solid #4a148c" : "1px solid #ddd";
+        const badge = isAdmin ? `<span style="background:#4a148c; color:white; padding:2px 6px; border-radius:4px; font-size:0.6rem; margin-right:5px;">أدمن</span>` : "";
+
         list.innerHTML += `
-            <div style="background:#fff; padding:12px; margin-bottom:10px; border-radius:10px; border:1px solid #ddd; position:relative;">
-                <div style="display:flex; justify-content:space-between;">
-                    <span style="font-size:0.85rem; font-weight:bold; color:#4a148c;">${d.username || 'مجهول'}</span>
+            <div style="background:${bgColor}; padding:12px; margin-bottom:10px; border-radius:10px; border:${border}; position:relative;">
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                    <div>
+                        <span style="font-size:0.85rem; font-weight:bold; color:#4a148c;">${d.username}</span>
+                        ${badge}
+                    </div>
                     <span style="font-size:0.7rem; color:#888;">${dateStr}</span>
                 </div>
                 <div style="color:#333; font-size:1rem; margin-top:5px;">${d.text}</div>
             </div>`;
     });
-});
+});سس
 </script>
 
 </div>
