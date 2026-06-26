@@ -1163,7 +1163,9 @@ document.getElementById("submit-comment").onclick = async () => {
 };
 
 // 3. كود العرض (الترتيب والألوان)
-onSnapshot(query(collection(db, "comments"), orderBy("timestamp", "desc")), (snap) => {
+// هنا الترتيب: هيجيب الـ isAdmin الأول (عشان تظهر فوق)، وبعدين التاريخ (الأحدث)
+onSnapshot(query(collection(db, "comments"), orderBy("isAdmin", "desc"), orderBy("timestamp", "desc")), (snap) => {
+    // باقي الكود زي ما هو بالظبط...
     const list = document.getElementById("comments-list");
     list.innerHTML = "";
     snap.forEach(doc => {
