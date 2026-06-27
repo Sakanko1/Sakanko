@@ -55,7 +55,7 @@ const roomsData = [
     price: "1200 جنيه / شهرياً للسرير",
     roomsCount: 3, 
     totalBeds: 6,
-    bedsAvailable: 6,
+    bedsAvailable: 0,
     images: [
     "https://i.ibb.co/fGkP1HS0/IMG-20260609-WA0062-1.jpg" ,
 "https://i.ibb.co/mFrY275x/IMG-20260609-WA0061-1.jpg" ,
