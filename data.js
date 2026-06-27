@@ -548,7 +548,7 @@ function bookNowAlert(roomId) {
 
     msg += `\n💬 هل السكن متاح حالياً للمعاينة؟`;
 
-    window.open(`https://wa.me/201025910607?text=${encodeURIComponent(msg)}`, '_blank');
+    window.open(`https://wa.me/201214731468?text=${encodeURIComponent(msg)}`, '_blank');
 }
 
 // ==========================================
