@@ -370,7 +370,206 @@ video: "eBThBBHF8M0",
     ],
     "video": "OdEXzStCjdw"
 },
+{
+    id: "SK-115", 
+    title: "  السوق الجديد - عمارات الكهرباء",
+    city: "السوق الجديد ",
+    type: "بنات",
+    price: "1500 جنيه / شهرياً",
+    roomsCount: 2, 
+    totalBeds: 4,
+    bedsAvailable: 4,
+    images: ["https://i.ibb.co/k25qt1VG/IMG-20260628-WA0127.jpg",],
 
+
+    desc: "سكن بنات متميز في موقع استراتيجي، تقع عمارات الكهرباء على يسارك وأنت متجه للموقف، والمستشفى على اليمين.",
+    features: ["موقع استراتيجي", "قرب من الموقف", "قرب من المستشفى"],
+    "video": "nuNf3L3-ito"
+},
+{
+    id: "SK-116", 
+    title: "السوق الجديد  - عمائر الكهرباء",
+    city: " السوق الجديد",
+    type: "شباب",
+    price: "700 جنيه / شهرياً",
+    roomsCount: 2, 
+    totalBeds: 4, // تم تقديرها بناءً على المتاح
+    bedsAvailable: 4, // السكن تم تأجيره بالكامل
+    images: [
+"https://i.ibb.co/yBqt0FYx/IMG-20260628-WA0095.jpg",
+"https://i.ibb.co/QvyqZR5N/IMG-20260628-WA0090.jpg",
+"https://i.ibb.co/C3VX4kDw/IMG-20260628-WA0088.jpg",
+"https://i.ibb.co/tMdbPbFG/IMG-20260628-WA0094.jpg",
+"https://i.ibb.co/zTTJNHP6/IMG-20260628-WA0093.jpg",
+"https://i.ibb.co/bgvFDcNc/IMG-20260628-WA0092.jpg",
+"https://i.ibb.co/KpYqyVv5/IMG-20260628-WA0089.jpg",
+"https://i.ibb.co/WpxV0Lg7/IMG-20260628-WA0087.jpg",
+"https://i.ibb.co/B2PXHKg7/IMG-20260628-WA0086.jpg",
+"https://i.ibb.co/Kpgs5jgT/IMG-20260628-WA0127.jpg",
+
+    ],
+    desc: "سكن شباب في موقع متميز خلف الكهرباء والخديوي، متاحة سمر فقط ، تم تأجير السكن لسنة جديدة.",
+    features: ["موقع خلف الكهرباء والخديوي", "غير مكيفة"]
+},
+{
+    id: "SK-117",
+    title: "السوق الجديد  - إسكان الشباب",
+    city: "السوق الجديد  - شارع المعاهد",
+    type: "شباب",
+    price: "750 جنيه / شهرياً",
+roomsCount: 2, 
+    totalBeds: 4,  
+    bedsAvailable: 4,  
+    images: [
+
+
+    ],
+    desc: "سكن شباب في موقع مميز في إسكان الشباب بشارع المعاهد سمر فقط",
+    features: ["موقع حيوي", "شارع المعاهد"],
+                "video": "Y24X6CcxQ8U"
+
+},
+{
+            id: "SK-118",
+            title:"عماير محلب",
+            city: "عماير محلب  - خلف دبور",
+            type: "شباب او بنات", // (يرجى التحديد)
+            price: " 1000 ج.م",
+            roomsCount: 3,
+            totalBeds: 6,
+            bedsAvailable: 6, 
+            images: [
+
+"https://i.ibb.co/9kYmXBjv/IMG-20260628-WA0126.jpg",
+"https://i.ibb.co/zHHdL5S1/IMG-20260628-WA0125.jpg",
+"https://i.ibb.co/GQ90JYXy/IMG-20260628-WA0124.jpg",
+"https://i.ibb.co/mVjnLfTq/IMG-20260628-WA0108-1.jpg",
+"https://i.ibb.co/HTdGMKDd/IMG-20260628-WA0122.jpg",
+"https://i.ibb.co/Y4gy0T3D/IMG-20260628-WA0123.jpg",
+"https://i.ibb.co/whYBz77N/IMG-20260628-WA0121.jpg",
+"https://i.ibb.co/KcM1PJw8/IMG-20260628-WA0120.jpg",
+"https://i.ibb.co/8Lcck95H/IMG-20260628-WA0119.jpg",
+"https://i.ibb.co/67JRRxWQ/IMG-20260628-WA0116.jpg",
+"https://i.ibb.co/zH7LkpTp/IMG-20260628-WA0105-1.jpg",
+"https://i.ibb.co/0HhZ4KL/IMG-20260628-WA0118.jpg",
+"https://i.ibb.co/6J1Sfbk7/IMG-20260628-WA0117.jpg",
+"https://i.ibb.co/pvP50tdj/IMG-20260628-WA0112.jpg",
+"https://i.ibb.co/9HwttKhr/IMG-20260628-WA0111-1.jpg",
+"https://i.ibb.co/XZjZs8ZX/IMG-20260628-WA0115.jpg",
+"https://i.ibb.co/cXhm2WN3/IMG-20260628-WA0114.jpg",
+"https://i.ibb.co/9HwttKhr/IMG-20260628-WA0111-1.jpg",
+"https://i.ibb.co/DHv8T51B/IMG-20260628-WA0110.jpg",
+"https://i.ibb.co/QhK6QBd/IMG-20260628-WA0113.jpg",
+"https://i.ibb.co/4CDmf6x/IMG-20260628-WA0109.jpg",
+"https://i.ibb.co/1f4m4RnW/IMG-20260628-WA0106.jpg",
+"https://i.ibb.co/QFN2cXMM/IMG-20260628-WA0107.jpg",
+"https://i.ibb.co/mVjnLfTq/IMG-20260628-WA0108-1.jpg",
+"https://i.ibb.co/p63vZRmv/IMG-20260628-WA0104.jpg",
+"https://i.ibb.co/zH7LkpTp/IMG-20260628-WA0105-1.jpg",
+    ],
+            features: ["قريب من السنتر", "دور تالت", "كل غرفة 2 سرير ", "  3 غرف "]
+        },
+
+{
+            id: "SK-119",
+            title: " السوق الجديد - أمام المستشفى",
+            city: " السوق الجديد ",
+            type: "بنات",
+            price: "1500 ج.م (  سنة جديدة) / 750 ج.م (سمر)",
+            roomsCount: 2,
+            totalBeds: 4,
+            bedsAvailable: 4, 
+            images: ["https://i.ibb.co/1YfJHnF8/Screenshot-Whats-App.jpg",],
+            features: ["أمام المستشفى", "سرير الصالة مجاني", "دور ثاني"],
+            "video": "Dc0vBy8uWmU"
+        },
+
+        {
+            id: "SK-120",
+            title: "المرحلة الخامسة   - كشري المدينة",
+            city: " المرحلة الخامسة (اول بيت)",
+            type: "شباب(مسيحيين)",
+            price: "تبدأ من 1400 ج.م",
+            priceDetails: { "غرفة دبل": "1500 ج.م", "غرفة تريبل": "1400 ج.م" },
+            roomsCount: 3,
+            totalBeds: 7,
+            bedsAvailable: 4, 
+            images: [
+"https://i.ibb.co/99yV8KYP/IMG-20260628-WA0057.jpg",
+"https://i.ibb.co/3tdfFS9/IMG-20260628-WA0056.jpg",
+"https://i.ibb.co/jNbDf6Z/IMG-20260628-WA0055.jpg",
+"https://i.ibb.co/5h8jqCMP/IMG-20260628-WA0048.jpg",
+"https://i.ibb.co/JWr6rgjR/IMG-20260628-WA0047.jpg",
+"https://i.ibb.co/hFFDFTXB/IMG-20260628-WA0054.jpg",
+"https://i.ibb.co/dwtBG1kd/IMG-20260628-WA0050.jpg",
+"https://i.ibb.co/1YS271my/IMG-20260628-WA0053.jpg",
+"https://i.ibb.co/BHC7Vpbb/IMG-20260628-WA0052.jpg",
+"https://i.ibb.co/C3GHt60d/IMG-20260628-WA0051.jpg",
+"https://i.ibb.co/M4YfpFM/IMG-20260628-WA0039.jpg",
+"https://i.ibb.co/QvbJgCnR/IMG-20260628-WA0045.jpg",
+"https://i.ibb.co/SwRYgwt5/IMG-20260628-WA0049.jpg",
+"https://i.ibb.co/4ZGHfLJ8/IMG-20260628-WA0044.jpg",
+"https://i.ibb.co/XchDn24/IMG-20260628-WA0043.jpg",
+"https://i.ibb.co/677SJtXk/IMG-20260628-WA0040.jpg",
+"https://i.ibb.co/V0344qV6/IMG-20260628-WA0042.jpg",
+"https://i.ibb.co/CsSCXX7Q/IMG-20260628-WA0041.jpg",
+"https://i.ibb.co/NgJs9SKP/IMG-20260628-WA0038.jpg",
+
+    ],
+            features: ["تشطيب سوبر لوكس", "قريب من الخدمات", "أول بيت في الخامسة"]
+        },
+          {
+    id: "SK-121",
+    title: "المرحلة الرابعة - خلف المديرية",
+    city: "المرحلة الارابعة  ",
+    type: "بنات",
+    price: "1000 ج.م",
+    priceDetails: { "غرفة مشتركة": "1000 ج.م", "سنجل": "1600 ج.م", "سعر السمر": "600 ج.م" },
+    roomsCount: 3,
+    totalBeds: 5,
+    bedsAvailable: 5,
+    images: [
+"https://i.ibb.co/BHtKCtDh/IMG-20260611-WA0072.jpg",
+"https://i.ibb.co/fGtzsVQh/IMG-20260611-WA0069.jpg",
+"https://i.ibb.co/39MC8sjG/IMG-20260628-WA0034.jpg",
+"https://i.ibb.co/sztXfrq/IMG-20260611-WA0070.jpg",
+"https://i.ibb.co/8nwNFssN/IMG-20260611-WA0075.jpg",
+"https://i.ibb.co/Xk2Xj2LP/IMG-20260611-WA0073.jpg",
+"https://i.ibb.co/Kj1RvYdV/IMG-20260611-WA0071.jpg",
+
+    ],
+    features: ["ثلاجة", "غسالة", "خلاط", "مكواة", "راوتر", "ديب فريزر"]
+},
+
+
+ {
+    id: "SK-122",
+    title: " العشر عماير",
+    city: "   دور ارضي- العشر عماير",
+    type: "بنات او اولاد",
+    price: "1150 ج.م",
+    
+        priceDetails: { "متاحة للسمر  ": "650 ج.م" },
+
+    roomsCount: 3,
+    totalBeds: 5,
+    bedsAvailable: 5,
+    images: [
+
+"https://i.ibb.co/vC8Twpn8/IMG-20260628-WA0097-1.jpg",
+"https://i.ibb.co/TBhdp9BJ/IMG-20260628-WA0103.jpg",
+"https://i.ibb.co/tpDXySf6/IMG-20260628-WA0096-1.jpg",
+"https://i.ibb.co/qFnJY8tc/IMG-20260628-WA0099-1.jpg",
+"https://i.ibb.co/fdLWCZXp/IMG-20260628-WA0098-1.jpg",
+"https://i.ibb.co/Ldf2ytVG/IMG-20260628-WA0102.jpg",
+"https://i.ibb.co/qFnJY8tc/IMG-20260628-WA0099-1.jpg",
+"https://i.ibb.co/tM77vy2k/IMG-20260628-WA0100.jpg",
+"https://i.ibb.co/hR0nRJC9/IMG-20260628-WA0101.jpg",
+"https://i.ibb.co/fdLWCZXp/IMG-20260628-WA0098-1.jpg",
+    ],
+    features: ["ثلاجة", "غسالة", "خلاط", "مكواة", "راوتر", "ديب فريزر"]
+},
+    
 ];
 
 let filteredRooms = [...roomsData];
